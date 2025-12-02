@@ -11,18 +11,18 @@ export default function DownloadCTA() {
   return (
     <section
       id="download"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-nepal-blue via-blue-600 to-nepal-red relative overflow-hidden"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-nepal-blue via-purple-700 to-nepal-red relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating mandalas */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute opacity-10"
             style={{
-              left: `${10 + i * 20}%`,
-              top: `${20 + (i % 3) * 30}%`,
+              left: `${10 + i * 15}%`,
+              top: `${20 + (i % 3) * 25}%`,
             }}
             animate={{
               rotate: [0, 360],
@@ -50,6 +50,14 @@ export default function DownloadCTA() {
             </svg>
           </motion.div>
         ))}
+
+        {/* Prayer wheel pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full" style={{
+            backgroundImage: `radial-gradient(circle, white 2px, transparent 2px)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -62,22 +70,46 @@ export default function DownloadCTA() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
+            {/* AI Badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-xl mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              transition={{ delay: 0.1 }}
+            >
+              <motion.svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+              </motion.svg>
+              <span className="font-bold text-sm">AI-POWERED PLATFORM</span>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-5xl sm:text-6xl font-bold mb-6">
-                Your Nepal Adventure
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
+                Your AI-Powered
                 <br />
-                Starts Here
+                <span className="text-nepal-gold">Nepal Adventure</span>
               </h2>
-              <p className="text-xl sm:text-2xl mb-8 text-blue-100">
-                Download Neptou now and unlock exclusive features, personalized recommendations, and unforgettable experiences across Nepal.
+              <p className="text-xl sm:text-2xl mb-8 text-blue-100 drop-shadow">
+                Experience Nepal like never before with <span className="font-bold text-white">cutting-edge AI technology</span> that learns your preferences and creates personalized adventures just for you.
+              </p>
+
+              {/* Nepali tagline */}
+              <p className="text-xl font-semibold text-nepal-gold mb-8 drop-shadow">
+                स्वागत छ - तपाईंको बुद्धिमान यात्रा साथी
               </p>
             </motion.div>
 
-            {/* Features list */}
+            {/* Features list with AI emphasis */}
             <motion.div
               className="space-y-4 mb-10"
               initial={{ opacity: 0 }}
@@ -85,11 +117,12 @@ export default function DownloadCTA() {
               transition={{ delay: 0.4 }}
             >
               {[
-                "100+ Verified Local Guides",
-                "500+ Hidden Gems & Attractions",
-                "Offline Maps for All of Nepal",
-                "Real-time Weather & Trail Updates",
-                "Community Reviews & Photos",
+                { text: "AI Smart Trip Planning", ai: true },
+                { text: "Real-time Language Translation", ai: true },
+                { text: "Personalized Recommendations", ai: true },
+                { text: "Offline Maps & AI Guides", ai: true },
+                { text: "100+ Verified Local Guides", ai: false },
+                { text: "1000+ Hidden Gems Discovered", ai: false },
               ].map((feature, index) => (
                 <motion.div
                   key={index}
@@ -98,12 +131,27 @@ export default function DownloadCTA() {
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 w-8 h-8 bg-nepal-gold rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5 text-nepal-blue" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+                  <div className={`flex-shrink-0 w-10 h-10 ${feature.ai ? 'bg-gradient-to-br from-purple-500 to-pink-500' : 'bg-nepal-gold'} rounded-full flex items-center justify-center shadow-lg`}>
+                    {feature.ai ? (
+                      <motion.svg
+                        className="w-5 h-5 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                      >
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                      </motion.svg>
+                    ) : (
+                      <svg className="w-5 h-5 text-nepal-blue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    )}
                   </div>
-                  <span className="text-lg">{feature}</span>
+                  <span className="text-lg font-medium drop-shadow">
+                    {feature.text}
+                    {feature.ai && <span className="ml-2 text-sm text-nepal-gold font-bold">(AI)</span>}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
@@ -118,7 +166,7 @@ export default function DownloadCTA() {
                 href="https://apps.apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 px-12 py-6 bg-black text-white text-xl font-bold rounded-2xl shadow-2xl group"
+                className="inline-flex items-center gap-4 px-12 py-6 bg-black text-white text-xl font-bold rounded-2xl shadow-2xl group hover:bg-gray-900 transition-colors border-4 border-white"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -134,9 +182,18 @@ export default function DownloadCTA() {
                 </svg>
               </motion.a>
 
-              <p className="mt-4 text-sm text-blue-100">
-                Available on iOS 14.0 or later • Free to download
-              </p>
+              <div className="mt-4 flex items-center gap-4 text-blue-100">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-nepal-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-sm font-semibold">4.9/5 Rating</span>
+                </div>
+                <span className="text-gray-400">•</span>
+                <span className="text-sm font-semibold">50K+ Downloads</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-sm font-semibold">Free to Download</span>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -165,16 +222,31 @@ export default function DownloadCTA() {
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-20" />
 
                 {/* Screen */}
-                <div className="relative w-full h-full bg-gradient-to-br from-blue-400 to-orange-200 rounded-[2.5rem] overflow-hidden">
-                  {/* App screenshot mockup */}
+                <div className="relative w-full h-full bg-gradient-to-br from-blue-500 via-purple-500 to-orange-400 rounded-[2.5rem] overflow-hidden">
+                  {/* App screenshot mockup with AI elements */}
                   <div className="absolute inset-0 p-6 flex flex-col">
                     {/* Status bar */}
-                    <div className="flex justify-between items-center text-white text-xs mb-8">
-                      <span>9:41</span>
+                    <div className="flex justify-between items-center text-white text-xs mb-4">
+                      <span className="font-semibold">9:41</span>
                       <div className="flex gap-1">
-                        <div className="w-4 h-4 bg-white rounded-full" />
-                        <div className="w-4 h-4 bg-white rounded-full" />
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                        </svg>
                       </div>
+                    </div>
+
+                    {/* AI Badge on screen */}
+                    <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full self-start mb-6">
+                      <motion.svg
+                        className="w-4 h-4 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                      >
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                      </motion.svg>
+                      <span className="text-white text-xs font-bold">AI Active</span>
                     </div>
 
                     {/* App content preview */}
@@ -182,21 +254,35 @@ export default function DownloadCTA() {
                       <motion.div
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="w-32 h-32 mb-6 bg-white rounded-full flex items-center justify-center shadow-xl"
+                        className="w-40 h-40 mb-6 bg-white rounded-full flex items-center justify-center shadow-2xl relative"
                       >
-                        <span className="text-5xl font-bold gradient-text">N</span>
+                        <span className="text-6xl font-bold gradient-text">N</span>
+                        {/* AI indicator pulse */}
+                        <motion.div
+                          className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                          }}
+                        >
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                          </svg>
+                        </motion.div>
                       </motion.div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">Neptou</h3>
-                      <p className="text-gray-700">Discover Nepal</p>
+                      <h3 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">Neptou</h3>
+                      <p className="text-white/90 font-semibold drop-shadow">AI Travel Companion</p>
                     </div>
 
-                    {/* Bottom icons */}
-                    <div className="flex justify-around items-center pb-6">
-                      {[...Array(5)].map((_, i) => (
+                    {/* Bottom nav with AI suggestions */}
+                    <div className="grid grid-cols-4 gap-2 pb-4">
+                      {["🏔️", "🗺️", "🤖", "❤️"].map((icon, i) => (
                         <motion.div
                           key={i}
-                          className="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-2xl"
-                          whileHover={{ scale: 1.1 }}
+                          className="aspect-square bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl"
                           animate={{
                             y: [0, -5, 0],
                           }}
@@ -205,7 +291,9 @@ export default function DownloadCTA() {
                             repeat: Infinity,
                             delay: i * 0.2,
                           }}
-                        />
+                        >
+                          {icon}
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -213,14 +301,14 @@ export default function DownloadCTA() {
               </div>
 
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-nepal-gold to-nepal-red rounded-[3rem] blur-3xl opacity-30 -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-[3rem] blur-3xl opacity-50 -z-10" />
             </motion.div>
 
             {/* Decorative elements */}
             <motion.div
-              className="absolute -top-10 -left-10 w-32 h-32 bg-nepal-gold rounded-full blur-2xl opacity-30"
+              className="absolute top-20 -left-10 w-32 h-32 bg-nepal-gold rounded-full blur-3xl opacity-40"
               animate={{
-                scale: [1, 1.2, 1],
+                scale: [1, 1.3, 1],
               }}
               transition={{
                 duration: 4,
@@ -228,9 +316,9 @@ export default function DownloadCTA() {
               }}
             />
             <motion.div
-              className="absolute -bottom-10 -right-10 w-40 h-40 bg-white rounded-full blur-2xl opacity-20"
+              className="absolute -bottom-10 -right-10 w-40 h-40 bg-white rounded-full blur-3xl opacity-30"
               animate={{
-                scale: [1, 1.3, 1],
+                scale: [1, 1.4, 1],
               }}
               transition={{
                 duration: 5,

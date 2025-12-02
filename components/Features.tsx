@@ -8,64 +8,72 @@ const features = [
   {
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    title: "AI Smart Recommendations",
+    description: "Our advanced AI learns your preferences and suggests personalized itineraries, hidden gems, and authentic experiences tailored just for you.",
+    color: "from-purple-500 via-pink-500 to-red-500",
+    aiPowered: true,
+    badge: "AI Core"
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
     title: "Discover Hidden Gems",
-    description: "Explore off-the-beaten-path locations that only locals know about. From secret temples to pristine hiking trails.",
+    description: "Explore secret temples in Bhaktapur, serene meditation spots in Pokhara, and untouched villages in the Annapurna region known only to locals.",
     color: "from-blue-500 to-cyan-500",
+    aiPowered: false,
   },
   {
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
       </svg>
     ),
-    title: "Smart Trip Planning",
-    description: "AI-powered itinerary suggestions based on your interests, budget, and time. Let us handle the planning.",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    ),
-    title: "Local Guides",
-    description: "Connect with verified local guides who can show you authentic Nepal. Book experiences directly through the app.",
+    title: "AI Language Assistant",
+    description: "Real-time Nepali-English translation, cultural context explanations, and local phrase suggestions. Break language barriers with confidence.",
     color: "from-green-500 to-emerald-500",
+    aiPowered: true,
+    badge: "AI Powered"
   },
   {
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    title: "Photo Spots",
-    description: "Find the best locations for that perfect Instagram shot. Complete with timing suggestions and photography tips.",
+    title: "Verified Local Guides",
+    description: "Connect with authentic Sherpa guides, cultural experts, and adventure specialists. Book experiences directly through the app with confidence.",
     color: "from-orange-500 to-red-500",
+    aiPowered: false,
   },
   {
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Cultural Insights",
-    description: "Learn about Nepal's rich culture, traditions, and history. Interactive guides for temples, festivals, and customs.",
+    title: "AI Trip Optimizer",
+    description: "Smart scheduling based on weather, crowd levels, and festivals. AI automatically adjusts your plans for the perfect experience every day.",
+    color: "from-indigo-500 to-purple-500",
+    aiPowered: true,
+    badge: "AI Smart"
+  },
+  {
+    icon: (
+      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    title: "Offline Maps & Guides",
+    description: "Download detailed maps of Kathmandu Valley, Annapurna circuit, and Everest Base Camp. Navigate Nepal even without internet in remote Himalayan regions.",
     color: "from-yellow-500 to-orange-500",
-  },
-  {
-    icon: (
-      <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    ),
-    title: "Offline Access",
-    description: "Download maps and guides for offline use. No internet? No problem. Navigate Nepal even in remote areas.",
-    color: "from-indigo-500 to-blue-500",
+    aiPowered: false,
   },
 ];
 
@@ -82,7 +90,36 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       whileHover={{ y: -10, transition: { duration: 0.2 } }}
       className="group relative"
     >
-      <div className="relative bg-white rounded-2xl shadow-xl p-8 h-full border border-gray-100 overflow-hidden">
+      <div className="relative bg-white rounded-3xl shadow-xl p-8 h-full border-2 border-gray-100 overflow-hidden hover:border-nepal-gold/50 transition-all">
+        {/* AI Badge */}
+        {feature.aiPowered && (
+          <motion.div
+            className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1"
+            initial={{ scale: 0 }}
+            animate={isInView ? { scale: 1 } : { scale: 0 }}
+            transition={{ delay: index * 0.1 + 0.3, type: "spring" }}
+          >
+            <motion.svg
+              className="w-3 h-3"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            >
+              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+            </motion.svg>
+            {feature.badge || "AI"}
+          </motion.div>
+        )}
+
+        {/* Traditional Nepali corner pattern */}
+        <div className="absolute top-0 left-0 w-16 h-16 opacity-10">
+          <svg viewBox="0 0 100 100" fill="currentColor" className="text-nepal-red">
+            <circle cx="0" cy="0" r="40" />
+            <circle cx="20" cy="20" r="20" />
+          </svg>
+        </div>
+
         {/* Gradient overlay on hover */}
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
@@ -90,11 +127,23 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 
         {/* Icon */}
         <motion.div
-          className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${feature.color} text-white mb-6 shadow-lg`}
+          className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.color} text-white mb-6 shadow-lg relative z-10`}
           whileHover={{ rotate: 360, scale: 1.1 }}
           transition={{ duration: 0.6 }}
         >
           {feature.icon}
+          {feature.aiPowered && (
+            <motion.div
+              className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+              }}
+            />
+          )}
         </motion.div>
 
         {/* Content */}
@@ -105,8 +154,22 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
           {feature.description}
         </p>
 
-        {/* Decorative corner */}
-        <div className={`absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br ${feature.color} opacity-10 rounded-tl-full`} />
+        {/* Decorative corner with mandala pattern */}
+        <div className="absolute -bottom-4 -right-4 w-32 h-32 opacity-5">
+          <svg viewBox="0 0 100 100" fill="currentColor" className={`text-nepal-red`}>
+            <circle cx="50" cy="50" r="40" />
+            <circle cx="50" cy="50" r="30" />
+            <circle cx="50" cy="50" r="20" />
+            {[...Array(8)].map((_, i) => (
+              <circle
+                key={i}
+                cx={50 + 30 * Math.cos((i * Math.PI) / 4)}
+                cy={50 + 30 * Math.sin((i * Math.PI) / 4)}
+                r="8"
+              />
+            ))}
+          </svg>
+        </div>
       </div>
     </motion.div>
   );
@@ -117,21 +180,51 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden">
-      {/* Decorative mandala background */}
-      <div className="absolute top-20 right-10 w-96 h-96 opacity-5 mandala-spin pointer-events-none">
+    <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-orange-50 to-blue-50 relative overflow-hidden">
+      {/* Traditional Nepali border pattern */}
+      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-nepal-blue via-nepal-red to-nepal-gold" />
+
+      {/* Decorative mandala background - larger and more visible */}
+      <div className="absolute top-20 right-10 w-[500px] h-[500px] opacity-5 mandala-spin pointer-events-none">
+        <svg viewBox="0 0 200 200" fill="currentColor" className="text-nepal-red">
+          <circle cx="100" cy="100" r="90" opacity="0.1" />
+          <circle cx="100" cy="100" r="70" opacity="0.2" />
+          <circle cx="100" cy="100" r="50" opacity="0.3" />
+          <circle cx="100" cy="100" r="30" opacity="0.5" />
+          {[...Array(16)].map((_, i) => (
+            <g key={i}>
+              <circle
+                cx={100 + 80 * Math.cos((i * Math.PI) / 8)}
+                cy={100 + 80 * Math.sin((i * Math.PI) / 8)}
+                r="12"
+                opacity="0.3"
+              />
+              <line
+                x1="100"
+                y1="100"
+                x2={100 + 90 * Math.cos((i * Math.PI) / 8)}
+                y2={100 + 90 * Math.sin((i * Math.PI) / 8)}
+                stroke="currentColor"
+                strokeWidth="2"
+                opacity="0.2"
+              />
+            </g>
+          ))}
+        </svg>
+      </div>
+
+      {/* Left side mandala */}
+      <div className="absolute bottom-20 left-10 w-[400px] h-[400px] opacity-5 mandala-spin pointer-events-none">
         <svg viewBox="0 0 200 200" fill="currentColor" className="text-nepal-blue">
-          <circle cx="100" cy="100" r="80" opacity="0.1" />
-          <circle cx="100" cy="100" r="60" opacity="0.2" />
-          <circle cx="100" cy="100" r="40" opacity="0.3" />
-          <circle cx="100" cy="100" r="20" opacity="0.5" />
+          <circle cx="100" cy="100" r="80" opacity="0.2" />
+          <circle cx="100" cy="100" r="60" opacity="0.3" />
           {[...Array(12)].map((_, i) => (
             <circle
               key={i}
               cx={100 + 70 * Math.cos((i * Math.PI) / 6)}
               cy={100 + 70 * Math.sin((i * Math.PI) / 6)}
-              r="10"
-              opacity="0.3"
+              r="15"
+              opacity="0.4"
             />
           ))}
         </svg>
@@ -145,23 +238,53 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          {/* AI Powered Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full shadow-xl mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ delay: 0.2 }}
+          >
+            <motion.svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            >
+              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+            </motion.svg>
+            <span className="font-bold">Powered by Advanced AI Technology</span>
+          </motion.div>
+
           <motion.h2
-            className="text-5xl sm:text-6xl font-bold mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="gradient-text">Everything You Need</span>
+            <span className="gradient-text">Intelligent Features</span>
             <br />
-            <span className="text-gray-800">for the Perfect Journey</span>
+            <span className="text-gray-800">for the Modern Traveler</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Neptou combines cutting-edge technology with local expertise to give you the ultimate Nepal experience
+            Experience Nepal like never before with AI-driven insights, personalized recommendations,
+            and tools designed specifically for the Himalayan adventure
+          </motion.p>
+
+          {/* Nepali text */}
+          <motion.p
+            className="text-lg text-nepal-red font-semibold mt-4"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            तपाईंको स्वागत छ - Welcome to the Future of Nepal Tourism
           </motion.p>
         </motion.div>
 
@@ -171,6 +294,29 @@ export default function Features() {
             <FeatureCard key={index} feature={feature} index={index} />
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ delay: 1 }}
+        >
+          <p className="text-xl text-gray-600 mb-6">
+            Ready to experience AI-powered travel in Nepal?
+          </p>
+          <motion.a
+            href="#download"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-nepal-red to-orange-500 text-white text-xl font-bold rounded-full shadow-2xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Start Your Journey
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
