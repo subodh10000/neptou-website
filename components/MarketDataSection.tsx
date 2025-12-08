@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 
 const yearlyData = [
   { year: "2019", value: 1197191, label: "1.19M" },
@@ -34,6 +34,39 @@ const monthlyData2024 = [
   { month: "Nov", value: 112345 },
   { month: "Dec", value: 98456 },
 ];
+
+// Animated Number Component
+function AnimatedNumber({ value, delay = 0, suffix = "" }: { value: number; delay?: number; suffix?: string }) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const timer = setTimeout(() => {
+      let start = 0;
+      const duration = 1500; // 1.5 seconds
+      const increment = value / (duration / 16); // 60fps
+
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= value) {
+          setDisplayValue(value);
+          clearInterval(counter);
+        } else {
+          setDisplayValue(Math.floor(start));
+        }
+      }, 16);
+
+      return () => clearInterval(counter);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [isInView, value, delay]);
+
+  return <span ref={ref}>{displayValue.toLocaleString()}{suffix}</span>;
+}
 
 export default function MarketDataSection() {
   const ref = useRef(null);
@@ -114,7 +147,8 @@ export default function MarketDataSection() {
             {yearlyData.map((data, index) => {
               const heightPercentage = (data.value / maxYearly) * 100;
               const isPandemic = data.year === "2020" || data.year === "2021";
-              const isRecent = data.year === "2023" || data.year === "2024";
+              const isRecovery = data.year === "2022" || data.year === "2023" || data.year === "2024";
+              const isPrePandemic = data.year === "2019";
 
               return (
                 <div key={index} className="flex-1 flex flex-col items-center justify-end">
@@ -128,16 +162,26 @@ export default function MarketDataSection() {
                     <div
                       className={`w-full h-full rounded-t-xl ${
                         isPandemic
-                          ? "bg-gradient-to-t from-red-500 to-red-600"
-                          : isRecent
-                          ? "bg-gradient-to-t from-green-500 to-green-600"
-                          : "bg-gradient-to-t from-blue-500 to-blue-600"
-                      } shadow-xl hover:shadow-2xl group-hover:scale-x-105 transition-all`}
+                          ? "bg-gradient-to-t from-red-400 to-red-500"
+                          : isRecovery
+                          ? "bg-gradient-to-t from-green-400 to-green-500"
+                          : "bg-gradient-to-t from-blue-400 to-blue-500"
+                      } shadow-xl hover:shadow-2xl group-hover:scale-x-105 transition-all relative overflow-visible`}
                       style={{ transformOrigin: 'bottom' }}
-                    />
+                    >
+                      {/* Animated number on top of bar */}
+                      <motion.div
+                        className="absolute -top-8 left-1/2 transform -translate-x-1/2 font-bold text-gray-900 text-xs sm:text-sm whitespace-nowrap"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                        transition={{ duration: 0.5, delay: index * 0.15 + 1.2 }}
+                      >
+                        <AnimatedNumber value={data.value} delay={(index * 150) + 1200} />
+                      </motion.div>
+                    </div>
 
                     {/* Tooltip */}
-                    <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
+                    <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 pointer-events-none">
                       <div className="font-bold text-lg">{data.label}</div>
                       <div className="text-xs">{data.value.toLocaleString()} tourists</div>
                       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900" />
