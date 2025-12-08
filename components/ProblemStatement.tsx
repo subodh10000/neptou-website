@@ -21,8 +21,8 @@ const problems = [
   {
     icon: "🏪",
     stat: "80%",
-    label: "Offline Businesses",
-    description: "Local hotels, guides, shops can't reach tourists effectively",
+    label: "Revenue Concentration",
+    description: "Over 80% of Nepal's tourism revenue is concentrated",
     color: "from-green-600 to-emerald-600",
   },
 ];
