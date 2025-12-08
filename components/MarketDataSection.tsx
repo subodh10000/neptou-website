@@ -110,41 +110,43 @@ export default function MarketDataSection() {
           </div>
 
           {/* Bar Chart */}
-          <div className="flex items-end justify-between gap-4 h-80">
+          <div className="flex items-end justify-between gap-3 sm:gap-4 h-80 relative">
             {yearlyData.map((data, index) => {
               const heightPercentage = (data.value / maxYearly) * 100;
               const isPandemic = data.year === "2020" || data.year === "2021";
               const isRecent = data.year === "2023" || data.year === "2024";
 
               return (
-                <div key={index} className="flex-1 flex flex-col items-center">
+                <div key={index} className="flex-1 flex flex-col items-center justify-end">
                   <motion.div
                     className="w-full relative group cursor-pointer"
-                    initial={{ height: 0 }}
-                    animate={isInView ? { height: `${heightPercentage}%` } : { height: 0 }}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
+                    style={{ height: `${heightPercentage}%` }}
+                    initial={{ scaleY: 0, opacity: 0 }}
+                    animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.15 + 0.4, ease: "easeOut" }}
                   >
                     <div
                       className={`w-full h-full rounded-t-xl ${
                         isPandemic
-                          ? "bg-gradient-to-t from-red-400 to-red-500"
+                          ? "bg-gradient-to-t from-red-500 to-red-600"
                           : isRecent
-                          ? "bg-gradient-to-t from-green-400 to-green-500"
-                          : "bg-gradient-to-t from-blue-400 to-blue-500"
-                      } shadow-lg group-hover:scale-105 transition-transform`}
+                          ? "bg-gradient-to-t from-green-500 to-green-600"
+                          : "bg-gradient-to-t from-blue-500 to-blue-600"
+                      } shadow-xl hover:shadow-2xl group-hover:scale-x-105 transition-all`}
+                      style={{ transformOrigin: 'bottom' }}
                     />
 
                     {/* Tooltip */}
-                    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                      <div className="font-bold">{data.label}</div>
+                    <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
+                      <div className="font-bold text-lg">{data.label}</div>
                       <div className="text-xs">{data.value.toLocaleString()} tourists</div>
                       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900" />
                     </div>
                   </motion.div>
 
-                  <div className="mt-4 text-center">
-                    <div className="font-bold text-gray-900">{data.year}</div>
-                    <div className="text-sm text-gray-600">{data.label}</div>
+                  <div className="mt-4 text-center w-full">
+                    <div className="font-bold text-gray-900 text-sm sm:text-base">{data.year}</div>
+                    <div className="text-xs sm:text-sm text-gray-600">{data.label}</div>
                   </div>
                 </div>
               );
