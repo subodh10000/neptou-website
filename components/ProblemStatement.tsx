@@ -172,57 +172,6 @@ export default function ProblemStatement() {
           ))}
         </div>
 
-        {/* Target Communities */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.8 }}
-          className="mb-20"
-        >
-          <h3 className="text-4xl font-bold text-center mb-12">
-            <span className="text-red-400">Who's</span>{" "}
-            <span className="text-white">Affected?</span>
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "✈️",
-                title: "1.15M Annual Tourists",
-                description: "Struggling with language barriers, safety concerns, and fragmented information",
-                tag: "PRIMARY",
-              },
-              {
-                icon: "👨‍🎓",
-                title: "200K+ Unemployed Youth",
-                description: "Ages 15-24 with education but no tech job opportunities in tourism sector",
-                tag: "SECONDARY",
-              },
-              {
-                icon: "🏪",
-                title: "10K+ Local Businesses",
-                description: "Hotels, guides, restaurants unable to reach tourists effectively",
-                tag: "TERTIARY",
-              },
-            ].map((community, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                transition={{ delay: 1 + i * 0.2 }}
-                className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20"
-              >
-                <div className="text-xs font-bold text-red-400 mb-3 px-3 py-1 bg-red-400/20 rounded-full inline-block">
-                  {community.tag}
-                </div>
-                <div className="text-5xl mb-4">{community.icon}</div>
-                <h4 className="text-2xl font-bold text-white mb-3">{community.title}</h4>
-                <p className="text-gray-300">{community.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Root Causes */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

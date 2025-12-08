@@ -118,7 +118,6 @@ export default function DownloadCTA() {
             >
               {[
                 { text: "AI Smart Trip Planning", ai: true },
-                { text: "Real-time Language Translation", ai: true },
                 { text: "Personalized Recommendations", ai: true },
                 { text: "Offline Maps & AI Guides", ai: true },
                 { text: "100+ Verified Local Guides", ai: false },

@@ -241,41 +241,6 @@ export default function OpportunitySection() {
           })}
         </div>
 
-        {/* Pain Points Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.8 }}
-          className="mt-20"
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-4xl sm:text-5xl font-bold mb-4">
-              <span className="text-gray-800">Challenges</span>{" "}
-              <span className="text-nepal-red">We're Solving</span>
-            </h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Despite the growth, tourists and local businesses face critical obstacles
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {painPoints.map((pain, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ delay: 1 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white rounded-2xl shadow-lg p-6 border-2 border-gray-100 hover:border-nepal-red transition-all"
-              >
-                <div className="text-4xl mb-3">{pain.icon}</div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{pain.title}</h4>
-                <p className="text-gray-600">{pain.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

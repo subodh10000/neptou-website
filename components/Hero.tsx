@@ -184,7 +184,7 @@ export default function Hero() {
                 <path d="M12 7c-1.1 0-2 .9-2 2h1.5c0-.28.22-.5.5-.5s.5.22.5.5-.22.5-.5.5c-.28 0-.5.22-.5.5v1h1.5v-.5c.83 0 1.5-.67 1.5-1.5S12.83 7 12 7z"/>
               </svg>
             </motion.div>
-            <span className="text-nepal-blue font-bold text-lg">AI-Powered Travel Companion</span>
+            <span className="text-nepal-blue font-bold text-lg">Your Nepal Travel Companion</span>
             <motion.div
               className="w-2 h-2 bg-green-500 rounded-full"
               animate={{
