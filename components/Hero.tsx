@@ -154,17 +154,18 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="flex flex-col items-center justify-center"
         >
-          {/* Logo/Brand with traditional pattern */}
+          {/* Logo/Brand with enhanced effects */}
           <motion.div
-            className="mb-8 relative"
+            className="mb-12 relative"
             animate={{
-              y: [0, -5, 0],
+              y: [0, -8, 0],
             }}
             transition={{
               duration: 6,
@@ -172,34 +173,139 @@ export default function Hero() {
               ease: "easeInOut"
             }}
           >
-            {/* Decorative circle behind logo */}
+            {/* Multiple glowing circles for depth */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center -z-10"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.4, 0.6, 0.4],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-br from-nepal-blue/30 via-nepal-red/20 to-nepal-gold/30 blur-3xl" />
+            </motion.div>
+
+            {/* Rotating decorative ring */}
             <motion.div
               className="absolute inset-0 flex items-center justify-center -z-10"
               animate={{
                 rotate: [0, 360],
               }}
               transition={{
-                duration: 40,
+                duration: 30,
                 repeat: Infinity,
                 ease: "linear",
               }}
             >
-              <div className="w-96 h-96 rounded-full border-4 border-nepal-gold/20 border-dashed" />
+              <div className="w-[500px] h-[500px] rounded-full border-4 border-nepal-gold/30 border-dashed" />
             </motion.div>
 
-            <h1 className="text-9xl sm:text-[10rem] lg:text-[12rem] font-bold gradient-text mb-12">
-              Neptou
-            </h1>
+            {/* Second counter-rotating ring */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center -z-10"
+              animate={{
+                rotate: [360, 0],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <div className="w-[400px] h-[400px] rounded-full border-2 border-white/20 border-dotted" />
+            </motion.div>
+
+            {/* Main Neptou text with dramatic effects */}
+            <motion.h1
+              className="relative font-bold leading-none"
+              style={{
+                fontSize: 'clamp(6rem, 20vw, 14rem)',
+                letterSpacing: '0.02em',
+              }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              {/* Glow layer 1 - Blue */}
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent blur-2xl opacity-70">
+                Neptou
+              </span>
+
+              {/* Glow layer 2 - Red/Gold */}
+              <span className="absolute inset-0 bg-gradient-to-r from-red-400 via-pink-500 to-orange-400 bg-clip-text text-transparent blur-xl opacity-50">
+                Neptou
+              </span>
+
+              {/* Main text with gradient */}
+              <span className="relative bg-gradient-to-r from-white via-nepal-gold to-white bg-clip-text text-transparent drop-shadow-2xl">
+                Neptou
+              </span>
+
+              {/* Shimmer effect */}
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent bg-clip-text text-transparent opacity-0"
+                animate={{
+                  opacity: [0, 0.4, 0],
+                  x: ['-100%', '200%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatDelay: 2,
+                  ease: "easeInOut",
+                }}
+              >
+                Neptou
+              </motion.span>
+            </motion.h1>
           </motion.div>
 
+          {/* Subtitle with enhanced styling */}
           <motion.h2
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            className="relative text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 px-4 max-w-5xl mx-auto leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Discover Nepal with the Power of AI
+            {/* Background glow */}
+            <span className="absolute inset-0 bg-gradient-to-r from-nepal-red/20 via-nepal-blue/20 to-nepal-gold/20 blur-2xl" />
+
+            {/* Text with gradient */}
+            <span className="relative">
+              <span className="text-white drop-shadow-lg">Discover </span>
+              <span className="bg-gradient-to-r from-nepal-blue via-nepal-red to-nepal-gold bg-clip-text text-transparent font-extrabold drop-shadow-xl">
+                Nepal
+              </span>
+              <span className="text-white drop-shadow-lg"> with the Power of </span>
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold drop-shadow-xl">
+                AI
+              </span>
+            </span>
           </motion.h2>
+
+          {/* Decorative divider */}
+          <motion.div
+            className="flex items-center gap-4 mb-12"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <motion.div
+              className="h-1 w-20 bg-gradient-to-r from-transparent via-nepal-gold to-nepal-red rounded-full"
+              animate={{ scaleX: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <div className="text-4xl">🏔️</div>
+            <motion.div
+              className="h-1 w-20 bg-gradient-to-r from-nepal-red via-nepal-gold to-transparent rounded-full"
+              animate={{ scaleX: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div
