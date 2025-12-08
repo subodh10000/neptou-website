@@ -39,11 +39,6 @@ const rootCauses = [
     impact: "60% of tourist spending leaks to international platforms",
   },
   {
-    title: "No Tech Jobs for Youth",
-    description: "Despite high education levels, there are minimal tech employment opportunities",
-    impact: "Brain drain - talented youth leave for abroad",
-  },
-  {
     title: "Information Asymmetry",
     description: "No single source of truth for real-time tourism data, safety, and recommendations",
     impact: "Poor tourist experiences and safety incidents",
