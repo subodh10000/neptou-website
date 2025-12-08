@@ -160,44 +160,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* AI Badge */}
-          <motion.div
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full shadow-xl mb-6 border-2 border-nepal-gold"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-            >
-              <svg className="w-6 h-6 text-nepal-blue" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
-                <circle cx="12" cy="14" r="1.5"/>
-                <circle cx="12" cy="10" r="1.5"/>
-                <path d="M12 7c-1.1 0-2 .9-2 2h1.5c0-.28.22-.5.5-.5s.5.22.5.5-.22.5-.5.5c-.28 0-.5.22-.5.5v1h1.5v-.5c.83 0 1.5-.67 1.5-1.5S12.83 7 12 7z"/>
-              </svg>
-            </motion.div>
-            <span className="text-nepal-blue font-bold text-lg">Your Nepal Travel Companion</span>
-            <motion.div
-              className="w-2 h-2 bg-green-500 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [1, 0.7, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            />
-          </motion.div>
-
           {/* Logo/Brand with traditional pattern */}
           <motion.div
             className="mb-8 relative"
@@ -225,13 +187,13 @@ export default function Hero() {
               <div className="w-96 h-96 rounded-full border-4 border-nepal-gold/20 border-dashed" />
             </motion.div>
 
-            <h1 className="text-8xl sm:text-9xl lg:text-[10rem] font-bold gradient-text mb-4 drop-shadow-2xl">
+            <h1 className="text-9xl sm:text-[10rem] lg:text-[12rem] font-bold gradient-text mb-6">
               Neptou
             </h1>
 
             {/* Nepali script subtitle */}
             <motion.p
-              className="text-2xl text-white font-semibold drop-shadow-lg"
+              className="text-3xl text-white font-bold"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -241,7 +203,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
