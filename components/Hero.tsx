@@ -244,47 +244,17 @@ export default function Hero() {
               <span className="relative bg-gradient-to-r from-white via-nepal-gold to-white bg-clip-text text-transparent drop-shadow-2xl">
                 Neptou
               </span>
-
-              {/* Shimmer effect */}
-              <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent bg-clip-text text-transparent opacity-0"
-                animate={{
-                  opacity: [0, 0.4, 0],
-                  x: ['-100%', '200%'],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatDelay: 2,
-                  ease: "easeInOut",
-                }}
-              >
-                Neptou
-              </motion.span>
             </motion.h1>
           </motion.div>
 
           {/* Subtitle with enhanced styling */}
           <motion.h2
-            className="relative text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 px-4 max-w-5xl mx-auto leading-tight"
+            className="relative text-3xl sm:text-5xl lg:text-6xl font-bold mb-8 px-4 max-w-5xl mx-auto leading-tight text-white drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            {/* Background glow */}
-            <span className="absolute inset-0 bg-gradient-to-r from-nepal-red/20 via-nepal-blue/20 to-nepal-gold/20 blur-2xl" />
-
-            {/* Text with gradient */}
-            <span className="relative">
-              <span className="text-white drop-shadow-lg">Discover </span>
-              <span className="bg-gradient-to-r from-nepal-blue via-nepal-red to-nepal-gold bg-clip-text text-transparent font-extrabold drop-shadow-xl">
-                Nepal
-              </span>
-              <span className="text-white drop-shadow-lg"> with the Power of </span>
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold drop-shadow-xl">
-                AI
-              </span>
-            </span>
+            Discover Nepal with the Power of AI
           </motion.h2>
 
           {/* Decorative divider */}
