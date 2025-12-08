@@ -12,13 +12,6 @@ const problems = [
     color: "from-red-600 to-orange-600",
   },
   {
-    icon: "🗣️",
-    stat: "70%+",
-    label: "Language Barriers",
-    description: "International visitors struggle to communicate, missing authentic experiences",
-    color: "from-purple-600 to-pink-600",
-  },
-  {
     icon: "📱",
     stat: "0",
     label: "Centralized Platform",
@@ -31,20 +24,6 @@ const problems = [
     label: "Offline Businesses",
     description: "Local hotels, guides, shops can't reach tourists effectively",
     color: "from-green-600 to-emerald-600",
-  },
-  {
-    icon: "⚠️",
-    stat: "40%",
-    label: "Safety Concerns",
-    description: "Tourists face navigation issues and lack real-time assistance in remote areas",
-    color: "from-yellow-600 to-orange-600",
-  },
-  {
-    icon: "💸",
-    stat: "6.7%",
-    label: "Untapped Potential",
-    description: "Tourism contributes only 6.7% to GDP when it could be 12%+ like Thailand",
-    color: "from-indigo-600 to-purple-600",
   },
 ];
 

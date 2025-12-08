@@ -70,89 +70,24 @@ export default function DownloadCTA() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            {/* AI Badge */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-xl mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ delay: 0.1 }}
-            >
-              <motion.svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-              </motion.svg>
-              <span className="font-bold text-sm">AI-POWERED PLATFORM</span>
-            </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2 }}
             >
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
-                Your AI-Powered
+                Discover
                 <br />
-                <span className="text-nepal-gold">Nepal Adventure</span>
+                <span className="text-nepal-gold">Nepal</span>
               </h2>
               <p className="text-xl sm:text-2xl mb-8 text-blue-100 drop-shadow">
-                Experience Nepal like never before with <span className="font-bold text-white">cutting-edge AI technology</span> that learns your preferences and creates personalized adventures just for you.
+                Experience the beauty, culture, and adventure of Nepal with your personal travel companion.
               </p>
 
               {/* Nepali tagline */}
               <p className="text-xl font-semibold text-nepal-gold mb-8 drop-shadow">
-                स्वागत छ - तपाईंको बुद्धिमान यात्रा साथी
+                स्वागत छ - नेपालमा तपाईंलाई स्वागत छ
               </p>
-            </motion.div>
-
-            {/* Features list with AI emphasis */}
-            <motion.div
-              className="space-y-4 mb-10"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              {[
-                { text: "AI Smart Trip Planning", ai: true },
-                { text: "Personalized Recommendations", ai: true },
-                { text: "Offline Maps & AI Guides", ai: true },
-                { text: "100+ Verified Local Guides", ai: false },
-                { text: "1000+ Hidden Gems Discovered", ai: false },
-              ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center gap-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <div className={`flex-shrink-0 w-10 h-10 ${feature.ai ? 'bg-gradient-to-br from-purple-500 to-pink-500' : 'bg-nepal-gold'} rounded-full flex items-center justify-center shadow-lg`}>
-                    {feature.ai ? (
-                      <motion.svg
-                        className="w-5 h-5 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                      >
-                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                      </motion.svg>
-                    ) : (
-                      <svg className="w-5 h-5 text-nepal-blue" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )}
-                  </div>
-                  <span className="text-lg font-medium drop-shadow">
-                    {feature.text}
-                    {feature.ai && <span className="ml-2 text-sm text-nepal-gold font-bold">(AI)</span>}
-                  </span>
-                </motion.div>
-              ))}
             </motion.div>
 
             {/* Download button */}
@@ -234,46 +169,17 @@ export default function DownloadCTA() {
                       </div>
                     </div>
 
-                    {/* AI Badge on screen */}
-                    <div className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full self-start mb-6">
-                      <motion.svg
-                        className="w-4 h-4 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      >
-                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                      </motion.svg>
-                      <span className="text-white text-xs font-bold">AI Active</span>
-                    </div>
-
                     {/* App content preview */}
                     <div className="flex-1 flex flex-col justify-center items-center text-center">
                       <motion.div
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="w-40 h-40 mb-6 bg-white rounded-full flex items-center justify-center shadow-2xl relative"
+                        className="w-40 h-40 mb-6 bg-white rounded-full flex items-center justify-center shadow-2xl"
                       >
                         <span className="text-6xl font-bold gradient-text">N</span>
-                        {/* AI indicator pulse */}
-                        <motion.div
-                          className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center"
-                          animate={{
-                            scale: [1, 1.2, 1],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                          }}
-                        >
-                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                          </svg>
-                        </motion.div>
                       </motion.div>
                       <h3 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">Neptou</h3>
-                      <p className="text-white/90 font-semibold drop-shadow">AI Travel Companion</p>
+                      <p className="text-white/90 font-semibold drop-shadow">Nepal Travel Guide</p>
                     </div>
 
                     {/* Bottom nav with AI suggestions */}

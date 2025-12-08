@@ -72,10 +72,10 @@ export default function FinalCTA() {
             transition={{ delay: 0.2 }}
           >
             <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white mb-6 drop-shadow-2xl">
-              Invest in Nepal's
+              Start Your
             </h2>
             <h3 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
-              <span className="text-nepal-gold drop-shadow-2xl">Digital Transformation</span>
+              <span className="text-nepal-gold drop-shadow-2xl">Nepal Journey</span>
             </h3>
           </motion.div>
 
@@ -96,53 +96,26 @@ export default function FinalCTA() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.5 }}
           >
-            A once-in-a-decade opportunity to solve a $805M market problem, create 20,000 jobs,
-            and transform an entire nation's economy through AI-powered tourism.
+            Join thousands of travelers exploring Nepal with Neptou.
           </motion.p>
-
-          {/* Stats */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.6 }}
-          >
-            {[
-              { value: "$805M", label: "Addressable Market" },
-              { value: "15:1", label: "LTV:CAC Ratio" },
-              { value: "20K+", label: "Jobs Created" },
-              { value: "Year 2", label: "Path to Profitability" },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                transition={{ delay: 0.7 + i * 0.1 }}
-                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border-2 border-white/30"
-              >
-                <div className="text-4xl sm:text-5xl font-bold text-nepal-gold mb-2">{stat.value}</div>
-                <div className="text-sm text-white/90">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 0.6 }}
           >
             <motion.a
-              href="mailto:invest@neptou.com"
+              href="#download"
               className="group px-12 py-6 bg-white text-nepal-blue text-2xl font-bold rounded-full shadow-2xl flex items-center gap-4 border-4 border-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
-              Invest Now
+              Download Now
               <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -154,68 +127,19 @@ export default function FinalCTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Schedule Meeting
+              Contact Us
             </motion.a>
-          </motion.div>
-
-          {/* Investor Updates */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 1.1 }}
-            className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border-2 border-white/30 max-w-2xl mx-auto"
-          >
-            <h4 className="text-2xl font-bold text-white mb-4">Get Investment Updates</h4>
-            <p className="text-white/90 mb-6">
-              Receive our pitch deck, financial projections, and exclusive updates on this opportunity to transform Nepal's tourism economy.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="investor@example.com"
-                className="flex-1 px-6 py-4 bg-white/90 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-nepal-gold text-lg"
-              />
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-nepal-red to-orange-500 text-white font-bold rounded-full shadow-xl whitespace-nowrap"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Pitch Deck
-              </motion.button>
-            </div>
-
-            <div className="mt-4 flex items-center justify-center gap-4 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-nepal-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Full Pitch Deck</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-nepal-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Financial Model</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-nepal-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Confidential</span>
-              </div>
-            </div>
           </motion.div>
 
           {/* Bottom tagline */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 1.3 }}
+            transition={{ delay: 0.8 }}
             className="mt-16 pt-8 border-t border-white/30"
           >
             <p className="text-xl text-white/90">
-              <span className="font-bold text-nepal-gold">Neptou</span> • नेपाल को खोज गर्नुहोस् • Discover Nepal with AI
+              <span className="font-bold text-nepal-gold">Neptou</span> • नेपाल को खोज गर्नुहोस् • Discover Nepal
             </p>
             <p className="text-sm text-white/70 mt-2">
               Made with ❤️ in Nepal

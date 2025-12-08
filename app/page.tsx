@@ -6,8 +6,6 @@ import ProblemStatement from "@/components/ProblemStatement";
 import OpportunitySection from "@/components/OpportunitySection";
 import MarketDataSection from "@/components/MarketDataSection";
 import SolutionSection from "@/components/SolutionSection";
-import MVPShowcase from "@/components/MVPShowcase";
-import Features from "@/components/Features";
 import MarketOpportunitySection from "@/components/MarketOpportunitySection";
 import HowItWorks from "@/components/HowItWorks";
 import BusinessModelSection from "@/components/BusinessModelSection";
@@ -25,8 +23,6 @@ export default function Home() {
       <OpportunitySection />
       <MarketDataSection />
       <SolutionSection />
-      <MVPShowcase />
-      <Features />
       <MarketOpportunitySection />
       <HowItWorks />
       <BusinessModelSection />
