@@ -154,7 +154,7 @@ export default function MarketDataSection() {
                 <div key={index} className="flex-1 flex flex-col items-center justify-end">
                   <motion.div
                     className="w-full relative group cursor-pointer"
-                    style={{ height: `${heightPercentage}%` }}
+                    style={{ height: `${heightPercentage}%`, transformOrigin: 'bottom' }}
                     initial={{ scaleY: 0, opacity: 0 }}
                     animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.15 + 0.4, ease: "easeOut" }}
@@ -167,7 +167,6 @@ export default function MarketDataSection() {
                           ? "bg-gradient-to-t from-green-400 to-green-500"
                           : "bg-gradient-to-t from-blue-400 to-blue-500"
                       } shadow-xl hover:shadow-2xl group-hover:scale-x-105 transition-all relative overflow-visible`}
-                      style={{ transformOrigin: 'bottom' }}
                     >
                       {/* Animated number on top of bar */}
                       <motion.div
