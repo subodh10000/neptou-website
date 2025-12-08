@@ -7,10 +7,8 @@ import OpportunitySection from "@/components/OpportunitySection";
 import MarketDataSection from "@/components/MarketDataSection";
 import SolutionSection from "@/components/SolutionSection";
 import MarketOpportunitySection from "@/components/MarketOpportunitySection";
-import HowItWorks from "@/components/HowItWorks";
 import BusinessModelSection from "@/components/BusinessModelSection";
 import SocialImpact from "@/components/SocialImpact";
-import DownloadCTA from "@/components/DownloadCTA";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -24,10 +22,8 @@ export default function Home() {
       <MarketDataSection />
       <SolutionSection />
       <MarketOpportunitySection />
-      <HowItWorks />
       <BusinessModelSection />
       <SocialImpact />
-      <DownloadCTA />
       <FinalCTA />
       <Footer />
     </main>
