@@ -187,19 +187,9 @@ export default function Hero() {
               <div className="w-96 h-96 rounded-full border-4 border-nepal-gold/20 border-dashed" />
             </motion.div>
 
-            <h1 className="text-9xl sm:text-[10rem] lg:text-[12rem] font-bold gradient-text mb-6">
+            <h1 className="text-9xl sm:text-[10rem] lg:text-[12rem] font-bold gradient-text mb-12">
               Neptou
             </h1>
-
-            {/* Nepali script subtitle */}
-            <motion.p
-              className="text-3xl text-white font-bold"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              नेपाल को खोज गर्नुहोस्
-            </motion.p>
           </motion.div>
 
           <motion.h2

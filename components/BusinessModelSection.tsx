@@ -41,7 +41,7 @@ const revenueStreams = [
   },
   {
     icon: "📊",
-    title: "Data &amp; Insights",
+    title: "Data & Insights",
     description: "Anonymized tourism data and trends sold to Nepal Tourism Board, research institutions, and travel companies.",
     revenue: "Premium tier",
     color: "from-yellow-500 to-orange-500",
